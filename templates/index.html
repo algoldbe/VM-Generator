@@ -1,20 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>Cisco TAC Voicemail Generator</title>
+    <title>TAC Voicemail Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: #fff;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            background-color: #666;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #fff;
+        }
+        input[type="text"], select {
+            display: block;
+            width: 90%;
+            padding: 10px;
+            border: none;
+            background-color: #555;
+            color: #fff;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            display: block;
+            width: 30%;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-        <form action="/submit" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name"><br>
-
-                <label for="gender">Gender:</label>
-                <input type="radio" id="male" name="gender" value="Male">
-                <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="Female">
-                <label for="female">Female</label><br>
-
-                <input type="submit" value="Submit">
-        </form>
+    <h1>Cisco TAC Voicemail Generator</h1>
+    <form action="/generate" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+        </select>
+        <center><input type="submit" value="Generate Voicemail" style="font-size: 16px;"></center>
+    </form>
 </body>
 </html>
