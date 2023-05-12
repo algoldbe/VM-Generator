@@ -16,10 +16,10 @@ def generate():
         voice = 'en-US-GuyNeural'
     else:
         voice = 'en-US-JennyNeural'
-    text = f"Hello, you have reached {name} at Cisco Tac, my working hours are from 10 am to 6 pm Monday through Friday, so I'm not available right now, Please leave your name and service request number, I'll review the information and contact you back as soon as possible, thank you!"
+    text = f"Hello, you have reached {name} at Cisco Tac, my working hours are from 9 am to 5 pm Monday through Friday, Pacific Time, so I'm not available right now, Please leave your name and service request number, I'll review the information and contact you as soon as possible. For immediate Tac assistance, please call 001,800,553,2447; Thank you!"
     output_file = "vm.wav"
     asyncio.run(_generate_voice(text, voice, output_file))
-    message = "Your new voicemail audio file has been generated successfully."
+    message = "Your new voicemail has been generated successfully!"
     file_url = f"/download/{output_file}"
     return render_template('result.html', message=message, file_url=file_url)
 
