@@ -1,6 +1,6 @@
 FROM python:3-alpine3.15
-WORKDIR /app
 COPY . /app
+WORKDIR /app
 RUN pip install -r requirements.txt
 EXPOSE 80
-CMD gunicorn --bind 0.0.0.0:80 app:app
+ENTRYPOINT [ "./gunicorn.sh" ]
