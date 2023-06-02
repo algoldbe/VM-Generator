@@ -29,7 +29,7 @@ def download(filename):
 
 async def _generate_voice(text, voice, output_file):
     communicate = edge_tts.Communicate(text, voice)
-    await communicate.save(output_file)
+    await communicate.save(output_file, channels=1)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=False)
