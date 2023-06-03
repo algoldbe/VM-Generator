@@ -1,3 +1,4 @@
 flask
 gunicorn
 edge-tts
+pydub
