@@ -4,6 +4,6 @@ ENV https_proxy http://proxy.esl.cisco.com
 WORKDIR /app
 COPY . /app
 RUN pip install -r requirements.txt
-RUN apk add ffmpeg
+RUN apk add --no-cache ffmpeg
 EXPOSE 800
 ENTRYPOINT [ "./gunicorn.sh" ]
