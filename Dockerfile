@@ -3,5 +3,5 @@ WORKDIR /app
 COPY . /app
 RUN pip install -r requirements.txt
 RUN apk add ffmpeg
-EXPOSE 80
+EXPOSE 800
 ENTRYPOINT [ "./gunicorn.sh" ]
