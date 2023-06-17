@@ -1,65 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>TAC Voicemail Generator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-        }
-        h1 {
-            margin-top: 50px;
-        }
-        audio {
-            display: block;
-            margin: 50px auto;
-        }
-        button {
-            margin: 20px 10px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #4CAF50;
-            color: #fff;
-            font-size: 18px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        button:hover {
-            background-color: #3e8e41;
-            text-decoration: none;
-        }
-        .button-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .go-back {
-            margin-top: 20px;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #555;
-            color: #fff;
-            font-size: 14px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <h2>{{ message }}</h2>
-    <center><p>You can listen to your voicemail here, please download the generated file and upload it into your phone portal. Thanks!</p></center>
-    <audio controls>
-        <source src="{{ file_url }}" type="audio/wav">
-        Your browser does not support the audio element.
-    </audio>
-    <br>
-    <div class="button-group">
-        <a href="{{ file_url }}" download><button>Download</button></a>
-        <button class="go-back" onclick="goBack()">Go Back</button>
-    </div>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>TAC Voicemail Generator</title>
+        <link rel="stylesheet" href="../static/css/cui-standard.min.css">
+        <link rel="stylesheet" href="{{url_for('static', filename= 'css/cui-standard.min.css')}}" >
+    </head>
+<body class="cui" data-theme="">
+    <main>
+        <header class="header" id="_uid2e4e5db4">
+                <div class="container">
+                   <div class="header-panels">
+                      <div class="header-panel"><a href="http://www.cisco.com" target="_blank" class="header__logo" id="_uid6dbf5fa0"><span class="icon-cisco"></span></a>
+                         <div class="header__title">Cisco TAC Voicemail Generator</div>
+                      </div>
+                   </div><span data-cubexbadge="container" class="badge-wrapper base-margin-left" id="_uide89e5b6e"></span>
+                </div>
+             </header>
+             <div class="container dbl-margin-top">
+                <div class="section">
+                    <h2>Your new voicemail has been generated successfully!</h2>
+                    <p>You can listen to your voicemail here, please download the generated file and upload it into your phone portal. Thanks!</p>
+                </div>
+                <div class="container">
+                    <audio controls>
+                        <source src="{{ file_url }}" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="button-group">
+                    <a href="{{ file_url }}" download><button class="btn btn--ellipsis btn-medium btn--primary base-margin-top">Download</button></a>
+                    <button class="btn btn--ellipsis btn-medium btn--secondary base-margin-top" onclick="goBack()">Go Back</button>
+                </div>
+             </div>
+    </main>
     <script>
         function goBack() {
             window.history.back();
