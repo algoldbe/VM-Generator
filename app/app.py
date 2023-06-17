@@ -20,7 +20,6 @@ def generate():
     text = f"Hello, you have reached {name} at Cisco Tac, my working hours are from 9 am to 5 pm Monday through Friday, Pacific Time, so I'm not available right now, Please leave your name and service request number, I'll review the information and contact you as soon as possible. For immediate Tac assistance, please call 001,800,553,2447; Thank you!"
     output_file = "vm.mp3"
     asyncio.run(_generate_voice(text, voice, output_file, HTTP_PROXY))
-    asyncio.run(_generate_voice(text, voice, output_file))
     wav_output_file = "vm.wav" 
     convert_to_wav(output_file, wav_output_file)
     os.remove(output_file)
@@ -40,4 +39,4 @@ def convert_to_wav(input_file, output_file):
     audio.export(output_file, format="wav")
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, debug=False)
+    app.run(host='0.0.0.0', port=800, debug=False)
